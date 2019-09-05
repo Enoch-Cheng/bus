@@ -1,0 +1,30 @@
+{
+    "list":[
+        {
+            "route":"13X",
+            "bound": 2,
+            "stopname":"WYLIE ROAD",
+            "stopcode":"GA01E11500",
+            "stopseq":9
+        },
+
+        {
+            "route":"213X",
+            "bound": 1,
+            "stopname":"WYLIE ROAD",
+            "stopcode":"GA01E11500",
+            "stopseq":24
+        },
+
+        {
+            "route":"224X",
+            "bound": 1,
+            "stopname":"LABOUR TRIBUNAL",
+            "stopcode":"GA01E11000",
+            "stopseq":13
+        }
+
+    ]
+    
+
+}
