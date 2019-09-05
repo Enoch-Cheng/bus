@@ -1,0 +1,85 @@
+function initTable(id, settings){
+    var table = document.getElementById(id);
+
+    for (i = settings.list.length-1; i >= 0; i--) {
+        //console.log(i);
+        var row = table.insertRow(0);  
+        var cell = row.insertCell(0); cell.innerHTML = "loading...";
+        var cell = row.insertCell(0); cell.innerHTML = settings.list[i].stopname;
+        var cell = row.insertCell(0); cell.innerHTML = settings.list[i].route;
+    }
+
+    var header = table.createTHead();
+    row = header.insertRow(0);  
+    cell = row.insertCell(0); cell.innerHTML = "<b>Estimated time of arrival</b>";
+    cell = row.insertCell(0); cell.innerHTML = "<b>Stop</b>";
+    cell = row.insertCell(0); cell.innerHTML = "<b>Route</b>";
+
+    console.log('init table');
+    
+}
+
+function updateTable(id, pos, value){
+    var table = document.getElementById(id);
+    table.rows[pos].cells[2].innerHTML = value; // ETA data is at column 3
+    console.log('updating table');
+}
+
+async function getStuff(url) {
+    const resp = await fetch(url);
+    const data = await resp.json();            
+    return data;
+    console.log('getting some stuff');
+}
+
+function delay(interval){
+    return new Promise(resolve => setTimeout(resolve, interval));
+} 
+
+async function getKmb_eta(proxy,d,idx) {
+    const url = 'http://etav3.kmb.hk/?action=geteta&lang=en' +
+    '&route=' + d.route +
+    '&bound=' + d.bound + 
+    '&stop=' + d.stopcode + 
+    '&stop_seq=' + d.stopseq;
+
+    await delay(idx*1000);
+    console.log('Query: ' + url)
+    const resp = await fetch(proxy + url);
+    const data = await resp.json(); 
+    if(data.hasOwnProperty('response')){
+        console.log('Got ETA');
+        // console.log(data.response);
+        return {eta:data.response, idx:idx};
+    }else{
+        console.error('Cannot get ETA');
+    }           
+    
+    
+}
+
+function parseETA(eta){
+    var string = "";
+    for(i = 0; i < eta.length; i++ ){
+        if(i == eta.length -1){
+            string = string + eta[i].t;
+        }else{
+            string = string + eta[i].t + "<br>";
+        }
+    }
+    return string;
+}
+
+function setCurrentTime(id){
+    var today = new Date(); 
+    var hh = today.getHours();
+    var mm = today.getMinutes();
+    var ss = today.getSeconds();
+
+    if (hh < 10)  hh = '0'+ hh;
+    if (mm < 10)  mm = '0'+ mm;
+    if (ss < 10)  ss = '0'+ ss;
+
+    document.getElementById(id).textContent = hh + ':' + mm + ':' + ss;
+    console.log('Getting current time');
+}
