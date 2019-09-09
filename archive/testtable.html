@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Enoch Bus ETA</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+    <script  src="https://code.jquery.com/jquery-3.4.1.min.js"    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.4.1/css/semantic-ui/tabulator_semantic-ui.min.css" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.4.1/js/tabulator.min.js'></script>
+
+</head>
+
+<body class="w3-container w3-auto">
+    <div class="w3-container w3-blue">
+        <h1>Current time is <span id="curtime"></span></h1>
+        <p>Next 13X arrives WANG CHIN STREET, KOWLOON BAY at...<span id="test"></span></p>
+    </div>
+    
+    <div id="example-table"></div>
+    <script>
+        
+        const proxy_url = 'https://cors-anywhere.herokuapp.com/';
+        const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
+                            
+        
+        
+        console.log('Getting ETA from KMB');   
+
+       
+  
+        
+        getETA()
+          .then(data => {
+            console.log('yay');
+            console.log(data);
+            var table = new Tabulator("#example-table", {
+                data:data.stops,
+                autoColumns:true,
+                dataTree:true,
+            });
+            
+          })
+          .catch(error => {
+            console.log('oops');
+            console.error(error);
+          });
+        
+        
+
+        async function getETA() {
+            const resp = await fetch('settings_morning.json');
+            let data = await resp.json();            
+
+            data.stops.test = data.stops;
+            return data;
+    
+        }
+
+       
+        
+    </script>
+
+</body>
+
+</html>

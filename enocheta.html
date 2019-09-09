@@ -21,23 +21,23 @@
     
     <script>
         
-        const proxy_url = 'https://cors-anywhere.herokuapp.com/';
-        const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
+        //const proxy_url = 'https://cors-anywhere.herokuapp.com/';
+        //const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
          
         var num = 0;
         setCurrentTime('curtime');
 
           
         // get settings
-        getStuff('settings_morning.json').then(settings => {          
+        getStuff('settings/home2hq.json').then(settings => {          
             console.log('yay got settings');   
             initTable('example', settings);
        
             // get ETA
            for(i = 0; i < settings.list.length; i++){
               
-              getKmb_eta(proxy_url,settings.list[i],i).then(resp =>{
-                let eta_string =  parseETA(resp.eta);
+              getKmb_eta(settings.list[i],i).then(resp =>{
+                let eta_string =  parseKMB(resp.eta);
                 console.log(eta_string);
                 console.log(resp.idx+1);
                 updateTable('example',resp.idx+1,eta_string);

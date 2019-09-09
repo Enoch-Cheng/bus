@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Enoch Bus ETA</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+    <script  src="https://code.jquery.com/jquery-3.4.1.min.js"    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+
+
+
+</head>
+
+<body class="w3-container w3-auto">
+    <div class="w3-container w3-blue">
+        <h1>Current time is <span id="curtime"></span></h1>
+        <p>Next 13X arrives WANG CHIN STREET, KOWLOON BAY at...<span id="test"></span></p>
+    </div>
+    
+    <div id="example-table"></div>
+
+    <div class="w3-container">
+        <table id="example" class="display" width="100%"></table>
+    </div>
+    <script>
+        
+        const proxy_url = 'https://cors-anywhere.herokuapp.com/';
+        const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
+                            
+        
+        
+        console.log('Getting ETA from KMB');   
+
+        getETA()
+          .then(data => {
+            console.log('yay');
+            console.log(data);
+            $(document).ready(function() {
+                $('#example').DataTable( {
+                    data: data,
+
+                } );
+            } );
+            
+          })
+          .catch(error => {
+            console.log('oops');
+            console.error(error);
+          });
+        
+
+       
+  
+
+        
+        
+
+        async function getETA() {
+            const resp = await fetch('settings_morning.json');
+            let data = await resp.json();            
+
+            //data.stops.test = data.stops;
+            return data;
+    
+        }
+
+       
+        
+    </script>
+
+</body>
+
+</html>
