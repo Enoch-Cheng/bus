@@ -36,7 +36,8 @@ function delay(interval){
     return new Promise(resolve => setTimeout(resolve, interval));
 } 
 
-async function getKmb_eta(proxy,d,idx) {
+async function getKmb_eta(d,idx) {
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
     const url = 'http://etav3.kmb.hk/?action=geteta&lang=en' +
     '&route=' + d.route +
     '&bound=' + d.bound + 
@@ -58,7 +59,19 @@ async function getKmb_eta(proxy,d,idx) {
     
 }
 
-function parseETA(eta){
+function parseKMB(eta){
+    var string = "";
+    for(i = 0; i < eta.length; i++ ){
+        if(i == eta.length -1){
+            string = string + eta[i].t;
+        }else{
+            string = string + eta[i].t + "<br>";
+        }
+    }
+    return string;
+}
+
+function parseCNB(eta){
     var string = "";
     for(i = 0; i < eta.length; i++ ){
         if(i == eta.length -1){
@@ -81,5 +94,20 @@ function setCurrentTime(id){
     if (ss < 10)  ss = '0'+ ss;
 
     document.getElementById(id).textContent = hh + ':' + mm + ':' + ss;
+    console.log('Getting current time');
+}
+
+function formatTime(datestring){
+    var d = new Date(datestring); 
+    var hh = d.getHours();
+    var mm = d.getMinutes();
+    var ss = d.getSeconds();
+
+    if (hh < 10)  hh = '0'+ hh;
+    if (ss>30) mm = mm + 1;
+    if (mm < 10)  mm = '0'+ mm;
+    
+
+    return hh + ':' + mm;
     console.log('Getting current time');
 }
