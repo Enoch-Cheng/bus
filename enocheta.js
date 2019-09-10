@@ -1,3 +1,8 @@
+//global settings
+const delay_factor = 1000;
+const proxy = 'https://cors-anywhere.herokuapp.com/';
+
+
 function initTable(id, settings){
     var table = document.getElementById(id);
 
@@ -36,15 +41,15 @@ function delay(interval){
     return new Promise(resolve => setTimeout(resolve, interval));
 } 
 
-async function getKmb_eta(d,idx) {
-    const proxy = 'https://cors-anywhere.herokuapp.com/';
+async function getKmb_eta(d,idx,wait) {
+    
     const url = 'http://etav3.kmb.hk/?action=geteta&lang=en' +
     '&route=' + d.route +
     '&bound=' + d.bound + 
     '&stop=' + d.stopcode + 
     '&stop_seq=' + d.stopseq;
 
-    await delay(idx*1000);
+    await delay(wait*delay_factor);
     console.log('Query: ' + url)
     const resp = await fetch(proxy + url);
     const data = await resp.json(); 
@@ -71,13 +76,32 @@ function parseKMB(eta){
     return string;
 }
 
+async function getCnb_eta(d,idx,wait) {
+   const url = 'https://rt.data.gov.hk/v1/transport/citybus-nwfb/eta/' +
+   d.co + '/' + d.stopcode + '/' + d.route;
+
+   await delay(wait*delay_factor);
+   console.log('Query: ' + url)
+   const resp = await fetch(url);
+   const data = await resp.json(); 
+   if(data.hasOwnProperty('data')){
+       console.log('Got ETA');
+       // console.log(data.data);
+       return {eta:data.data, idx:idx};
+   }else{
+       console.error('Cannot get ETA');
+   }           
+    
+}
+
+
 function parseCNB(eta){
     var string = "";
     for(i = 0; i < eta.length; i++ ){
         if(i == eta.length -1){
-            string = string + eta[i].t;
+            string = string + formatTime(eta[i].eta) + eta[i].rmk_en;
         }else{
-            string = string + eta[i].t + "<br>";
+            string = string + formatTime(eta[i].eta) + eta[i].rmk_en + "<br>";
         }
     }
     return string;

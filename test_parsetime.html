@@ -19,6 +19,14 @@
         console.log(formatTime(ss));
         console.log('ended testing');
 
+        getCnb_eta(1,2).then(resp =>{
+            console.log(resp);
+            console.log(parseCNB(resp.eta));
+        }).catch(e =>{
+            console.log('Error getting eta');
+            console.error(e);
+        });
+
 
 
  

@@ -13,11 +13,11 @@
 <body class="w3-container w3-auto">
     <div class="w3-container w3-blue">
         <h1>Current time is <span id="curtime"></span></h1>
-        <p>Testing 123 hahaha I love MDCO<span id="test"></span></p>
+        <p><span id="ETAtitle"></span></p>
     </div>
     
         
-    <table id="example" class="w3-table-all"></table>
+    <table id="ETAtable" class="w3-table-all"></table>
     
     <script>
         
@@ -26,27 +26,50 @@
          
         var num = 0;
         setCurrentTime('curtime');
-
+        //const settings_path = 'settings/home2hq.json';
+        const settings_path = 'settings/np2mdco.json';
           
         // get settings
-        getStuff('settings/home2hq.json').then(settings => {          
+        getStuff(settings_path).then(settings => {          
             console.log('yay got settings');   
-            initTable('example', settings);
-       
+            initTable('ETAtable', settings);
+            document.getElementById("ETAtitle").textContent = settings.title;
+
+            //initialize delays
+            var kmb_delay = 0;
+            var cnb_delay = 0;
             // get ETA
            for(i = 0; i < settings.list.length; i++){
               
-              getKmb_eta(settings.list[i],i).then(resp =>{
+            if (settings.list[i].co == 'KMB'){
+              kmb_delay++;
+              getKmb_eta(settings.list[i],i,kmb_delay).then(resp =>{
                 let eta_string =  parseKMB(resp.eta);
                 console.log(eta_string);
                 console.log(resp.idx+1);
-                updateTable('example',resp.idx+1,eta_string);
+                updateTable('ETAtable',resp.idx+1,eta_string);
 
               }).catch(e =>{
-                console.log('Error getting eta');
+                console.log('Error getting KMB ETA');
                 console.error(e);
               });
-           }
+
+            }else{
+              cnb_delay++;
+              getCnb_eta(settings.list[i],i,cnb_delay).then(resp =>{
+                let eta_string =  parseCNB(resp.eta);
+                console.log(eta_string);
+                console.log(resp.idx+1);
+                updateTable('ETAtable',resp.idx+1,eta_string);
+
+              }).catch(e =>{
+                console.log('Error getting CTB/NWFB ETA');
+                console.error(e);
+              });
+
+            }
+
+           } //end of for loop
 
 
           }).catch(error => {

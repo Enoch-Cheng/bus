@@ -1,0 +1,40 @@
+{
+    "title":"From North Point Ferry Pier to MDCO",
+    "list":[
+        {
+            "co":"KMB",
+            "route":"110",
+            "bound": 1,
+            "stopname":"KAM HONG STREET",
+            "stopcode":"JA02E13250",
+            "stopseq":30
+        },
+        {
+            "co":"NWFB",
+            "route":"18X",
+            "bound": "inbound",
+            "stopname":"KAM HONG STREET",
+            "stopcode":"001256",
+            "stopseq":11
+        },
+        {
+            "co":"CTB",
+            "route":"A12",
+            "bound": "inbound",
+            "stopname":"KAM HONG STREET",
+            "stopcode":"001256",
+            "stopseq":10
+        },
+        {
+            "co":"NWFB",
+            "route":"82",
+            "bound": "inbound",
+            "stopname":"NORTH POINT FERRY PIER",
+            "stopcode":"001249",
+            "stopseq":1
+        }
+
+    ]
+    
+
+}
