@@ -15,22 +15,13 @@
     
     <script>
         console.log('started testing');
-        ss = '2019-05-20T15:44:33+08:00';
-        console.log(formatTime(ss));
+
+        console.log(location.search);
+        const params = new URLSearchParams(location.search);
+        console.log(params.has('size'));
+        console.log(params.get('size'));
+
         console.log('ended testing');
-
-        getCnb_eta(1,2).then(resp =>{
-            console.log(resp);
-            console.log(parseCNB(resp.eta));
-        }).catch(e =>{
-            console.log('Error getting eta');
-            console.error(e);
-        });
-
-
-
- 
-
         
     </script>
 

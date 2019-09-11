@@ -2,83 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Enoch Bus ETA</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src='enocheta.js'></script>  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Enoch Bus ETA</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src='enocheta.js'></script>
 </head>
 
 <body class="w3-container w3-auto">
-    <div class="w3-container w3-blue">
-        <h1>Current time is <span id="curtime"></span></h1>
-        <p><span id="ETAtitle"></span></p>
-    </div>
-    
-        
-    <table id="ETAtable" class="w3-table-all"></table>
-    
-    <script>
-        
-        //const proxy_url = 'https://cors-anywhere.herokuapp.com/';
-        //const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
-         
-        var num = 0;
-        setCurrentTime('curtime');
-        //const settings_path = 'settings/home2hq.json';
-        const settings_path = 'settings/np2mdco.json';
-          
-        // get settings
-        getStuff(settings_path).then(settings => {          
-            console.log('yay got settings');   
-            initTable('ETAtable', settings);
-            document.getElementById("ETAtitle").textContent = settings.title;
-
-            //initialize delays
-            var kmb_delay = 0;
-            var cnb_delay = 0;
-            // get ETA
-           for(i = 0; i < settings.list.length; i++){
-              
-            if (settings.list[i].co == 'KMB'){
-              kmb_delay++;
-              getKmb_eta(settings.list[i],i,kmb_delay).then(resp =>{
-                let eta_string =  parseKMB(resp.eta);
-                console.log(eta_string);
-                console.log(resp.idx+1);
-                updateTable('ETAtable',resp.idx+1,eta_string);
-
-              }).catch(e =>{
-                console.log('Error getting KMB ETA');
-                console.error(e);
-              });
-
-            }else{
-              cnb_delay++;
-              getCnb_eta(settings.list[i],i,cnb_delay).then(resp =>{
-                let eta_string =  parseCNB(resp.eta);
-                console.log(eta_string);
-                console.log(resp.idx+1);
-                updateTable('ETAtable',resp.idx+1,eta_string);
-
-              }).catch(e =>{
-                console.log('Error getting CTB/NWFB ETA');
-                console.error(e);
-              });
-
-            }
-
-           } //end of for loop
+  <div class="w3-container w3-blue">
+    <h1>Current time is <span id="curtime"></span></h1>
+    <p><span id="ETAtitle"></span></p>
+  </div>
 
 
-          }).catch(error => {
-            console.log('oops');
-            console.error(error);
+  <table id="ETAtable" class="w3-table-all"></table>
+
+
+  <div class="w3-bar">
+    <a href="enocheta.html" class="w3-button w3-blue w3-xxlarge">Home</a>
+    <a href="enocheta.html?profile=home2hq" class="w3-button w3-green w3-xxlarge">HQ</a>
+    <a href="enocheta.html" class="w3-button w3-purple w3-xxlarge">Other</a>
+  </div>
+
+
+  <script>
+
+    //const proxy_url = 'https://cors-anywhere.herokuapp.com/';
+    //const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
+
+    var num = 0;
+    setCurrentTime('curtime');
+    //const settings_path = 'settings/home2hq.json';
+
+    //determine which setting to use
+    const params = new URLSearchParams(location.search);
+    var settings_path = '';
+    if (params.has('profile')) {
+      settings_path = 'settings/' + params.get('profile') + '.json';
+    } else {
+      settings_path = 'settings/np2mdco.json'; //default
+    }
+
+
+    // get settings
+    getStuff(settings_path).then(settings => {
+      console.log('yay got settings');
+      initTable('ETAtable', settings);
+      document.getElementById("ETAtitle").textContent = settings.title;
+
+      //initialize delays
+      var kmb_delay = 0;
+      var cnb_delay = 0;
+      // get ETA
+      for (i = 0; i < settings.list.length; i++) {
+
+        if (settings.list[i].co == 'KMB') {
+          kmb_delay++;
+          getKmb_eta(settings.list[i], i, kmb_delay).then(resp => {
+            let eta_string = parseKMB(resp.eta);
+            console.log(eta_string);
+            console.log(resp.idx + 1);
+            updateTable('ETAtable', resp.idx + 1, eta_string);
+
+          }).catch(e => {
+            console.log('Error getting KMB ETA');
+            console.error(e);
           });
-                        
-        
-    </script>
+
+        } else {
+          cnb_delay++;
+          getCnb_eta(settings.list[i], i, cnb_delay).then(resp => {
+            let eta_string = parseCNB(resp.eta);
+            console.log(eta_string);
+            console.log(resp.idx + 1);
+            updateTable('ETAtable', resp.idx + 1, eta_string);
+
+          }).catch(e => {
+            console.log('Error getting CTB/NWFB ETA');
+            console.error(e);
+          });
+
+        }
+
+      } //end of for loop
+
+
+    }).catch(error => {
+      console.log('oops');
+      console.error(error);
+    });
+
+
+  </script>
 
 </body>
 
