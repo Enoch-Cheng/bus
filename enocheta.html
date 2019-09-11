@@ -21,9 +21,10 @@
 
 
   <div class="w3-bar">
-    <a href="enocheta.html" class="w3-button w3-blue w3-xxlarge">Home</a>
-    <a href="enocheta.html?profile=home2hq" class="w3-button w3-green w3-xxlarge">HQ</a>
-    <a href="enocheta.html" class="w3-button w3-purple w3-xxlarge">Other</a>
+    <a href="enocheta.html" class="w3-button w3-indigo w3-xlarge" style="width:24.5%">Home</a>
+    <a href="enocheta.html?profile=home2hq" class="w3-button w3-green w3-xlarge" style="width:24.5%">HQ</a>
+    <a href="enocheta.html?profile=np2mdco" class="w3-button w3-purple w3-xlarge" style="width:24.5%">MDCO</a>
+    <a href="enocheta.html" class="w3-button w3-deep-orange w3-xlarge" style="width:24.5%">Other</a>
   </div>
 
 
@@ -42,7 +43,7 @@
     if (params.has('profile')) {
       settings_path = 'settings/' + params.get('profile') + '.json';
     } else {
-      settings_path = 'settings/np2mdco.json'; //default
+      settings_path = 'settings/home.json'; //default
     }
 
 
@@ -50,7 +51,7 @@
     getStuff(settings_path).then(settings => {
       console.log('yay got settings');
       initTable('ETAtable', settings);
-      document.getElementById("ETAtitle").textContent = settings.title;
+      document.getElementById("ETAtitle").innerHTML = settings.title;
 
       //initialize delays
       var kmb_delay = 0;
@@ -61,10 +62,12 @@
         if (settings.list[i].co == 'KMB') {
           kmb_delay++;
           getKmb_eta(settings.list[i], i, kmb_delay).then(resp => {
-            let eta_string = parseKMB(resp.eta);
-            console.log(eta_string);
-            console.log(resp.idx + 1);
-            updateTable('ETAtable', resp.idx + 1, eta_string);
+            if(resp.hasOwnProperty('eta')){
+              let eta_string = parseKMB(resp.eta);
+              updateTable('ETAtable', resp.idx + 1, eta_string);
+            }else{
+              updateTable('ETAtable', resp.idx + 1, 'Error!');
+            }
 
           }).catch(e => {
             console.log('Error getting KMB ETA');
@@ -74,10 +77,12 @@
         } else {
           cnb_delay++;
           getCnb_eta(settings.list[i], i, cnb_delay).then(resp => {
-            let eta_string = parseCNB(resp.eta);
-            console.log(eta_string);
-            console.log(resp.idx + 1);
-            updateTable('ETAtable', resp.idx + 1, eta_string);
+            if(resp.hasOwnProperty('eta')){
+              let eta_string = parseCNB(resp.eta);
+              updateTable('ETAtable', resp.idx + 1, eta_string);
+            }else{
+              updateTable('ETAtable', resp.idx + 1, 'Error!');
+            }
 
           }).catch(e => {
             console.log('Error getting CTB/NWFB ETA');

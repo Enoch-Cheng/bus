@@ -43,7 +43,7 @@ function delay(interval){
 
 async function getKmb_eta(d,idx,wait) {
     
-    const url = 'http://etav3.kmb.hk/?action=geteta&lang=en' +
+    const url = 'http://etav3.kmb.hk/?action=geteta&lang=tc' +
     '&route=' + d.route +
     '&bound=' + d.bound + 
     '&stop=' + d.stopcode + 
@@ -53,12 +53,14 @@ async function getKmb_eta(d,idx,wait) {
     console.log('Query: ' + url)
     const resp = await fetch(proxy + url);
     const data = await resp.json(); 
+    //console.log(data);
     if(data.hasOwnProperty('response')){
         console.log('Got ETA');
         // console.log(data.response);
         return {eta:data.response, idx:idx};
     }else{
         console.error('Cannot get ETA');
+        return {idx:idx};
     }           
     
     
@@ -125,10 +127,8 @@ function formatTime(datestring){
     var d = new Date(datestring); 
     var hh = d.getHours();
     var mm = d.getMinutes();
-    var ss = d.getSeconds();
-
+ 
     if (hh < 10)  hh = '0'+ hh;
-    if (ss>30) mm = mm + 1;
     if (mm < 10)  mm = '0'+ mm;
     
 

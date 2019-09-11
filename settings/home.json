@@ -1,0 +1,50 @@
+{
+    "title":"Home &#9825;",
+    "list":[
+        {
+            "co":"KMB",
+            "route":"203C",
+            "bound": 2,
+            "stopname":"何文田山道&rarr;大坑東",
+            "stopcode":"WY01N10500",
+            "stopseq":9
+        },
+
+        {
+            "co":"KMB",
+            "route":"103",
+            "bound": 2,
+            "stopname":"嘉輝臺&rarr;竹園",
+            "stopcode":"PR03N10000",
+            "stopseq":25
+        },
+
+        {
+            "co":"KMB",
+            "route":"113",
+            "bound": 2,
+            "stopname":"嘉輝臺&rarr;彩虹",
+            "stopcode":"PR03N10000",
+            "stopseq":18
+        },
+        {
+            "co":"KMB",
+            "route":"170",
+            "bound": 2,
+            "stopname":"嘉輝臺&rarr;沙田",
+            "stopcode":"PR03N10000",
+            "stopseq":17
+        },
+        {
+            "co":"KMB",
+            "route":"182",
+            "bound": 2,
+            "stopname":"嘉輝臺&rarr;愉翠苑",
+            "stopcode":"PR03N10000",
+            "stopseq":11
+        }
+
+    ]
+    
+
+}
