@@ -1,0 +1,66 @@
+{
+    "title":"Home to Hunghom & To Kwa Wan",
+    "list":[
+        {
+            "co":"KMB",
+            "route":"30X",
+            "bound": 1,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11600",
+            "stopseq":21
+        },
+
+        {
+            "co":"KMB",
+            "route":"11",
+            "bound": 2,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11500",
+            "stopseq":3
+        },
+
+        {
+            "co":"KMB",
+            "route":"14",
+            "bound": 2,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11500",
+            "stopseq":4
+        },
+        {
+            "co":"KMB",
+            "route":"26",
+            "bound": 2,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11500",
+            "stopseq":8
+        },
+        {
+            "co":"KMB",
+            "route":"2E",
+            "bound": 2,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11600",
+            "stopseq":14
+        },
+        {
+            "co":"KMB",
+            "route":"6C",
+            "bound": 2,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11600",
+            "stopseq":16
+        },
+        {
+            "co":"KMB",
+            "route":"6F",
+            "bound": 2,
+            "stopname":"衛理道",
+            "stopcode":"GA01E11600",
+            "stopseq":11
+        }
+
+    ]
+    
+
+}

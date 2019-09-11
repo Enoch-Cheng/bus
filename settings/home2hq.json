@@ -5,7 +5,7 @@
             "co":"KMB",
             "route":"13X",
             "bound": 2,
-            "stopname":"WYLIE ROAD",
+            "stopname":"衛理道",
             "stopcode":"GA01E11500",
             "stopseq":9
         },
@@ -14,7 +14,7 @@
             "co":"KMB",
             "route":"213X",
             "bound": 1,
-            "stopname":"WYLIE ROAD",
+            "stopname":"衛理道",
             "stopcode":"GA01E11500",
             "stopseq":24
         },
@@ -23,7 +23,7 @@
             "co":"KMB",
             "route":"224X",
             "bound": 1,
-            "stopname":"LABOUR TRIBUNAL",
+            "stopname":"勞資審裁處",
             "stopcode":"GA01E11000",
             "stopseq":13
         }
