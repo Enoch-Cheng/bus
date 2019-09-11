@@ -1,5 +1,5 @@
 //global settings
-const delay_factor = 1000;
+const delay_factor = 500;
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 
 

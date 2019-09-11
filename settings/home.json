@@ -42,6 +42,22 @@
             "stopname":"嘉輝臺&rarr;愉翠苑",
             "stopcode":"PR03N10000",
             "stopseq":11
+        },
+        {
+            "co":"KMB",
+            "route":"203C",
+            "bound": 1,
+            "stopname":"伊利沙伯醫院&rarr;尖東",
+            "stopcode":"WY01S10500",
+            "stopseq":15
+        },
+        {
+            "co":"KMB",
+            "route":"103",
+            "bound": 1,
+            "stopname":"伊利沙伯醫院&rarr;蒲飛路",
+            "stopcode":"WY01S10500",
+            "stopseq":13
         }
 
     ]
