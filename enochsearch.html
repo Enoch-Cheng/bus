@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Enoch Route Search</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='enocheta.js'></script>
+
+    <!-- Table stuff -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.4.1/css/semantic-ui/tabulator_semantic-ui.min.css"
+        rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.4.1/js/tabulator.min.js'></script>
+
+</head>
+
+<body class="w3-container w3-auto">
+
+    <form class="w3-container w3-sand">
+        <h2>Search routes and codes</h2>
+        <div class="w3-row">
+            <div class="w3-third">
+                <p><label>Route:</label>
+                    <input id="route" class="w3-input w3-border" name="route" type="text" style="width:30%"></p>
+            </div>
+
+            <div class="w3-third">
+                <input id="co1" class="w3-check" name="company" type="radio" value="KMB" checked="checked">
+                <label>KMB</label>
+                <br>
+                <input id="co2" class="w3-check" name="company" type="radio" value="CTB" disabled>
+                <label>CTB</label>
+                <br>
+                <input id="co3" class="w3-check" name="company" type="radio" value="NWFB" disabled>
+                <label>NWFB</label>
+                <br><br>
+            </div>
+
+            <div class="w3-third">
+                <input id="b1" class="w3-radio" type="radio" name="bound" value="inbound" checked>
+                <label>Inbound</label>
+                <br>
+                <input id="b2" class="w3-radio" type="radio" name="bound" value="outbound">
+                <label>Outbound</label>
+            </div>
+        </div>
+        <button class="w3-btn w3-block w3-blue-grey" onclick="ucase()">Search</button>
+        <p></p>
+    </form>
+    <div id="routetable"></div>
+
+    <script>
+       
+        const params = new URLSearchParams(location.search);
+        if (params.has('route')) document.getElementById("route").value = params.get('route');
+        if (params.has('company')) {
+
+            switch (params.get('company')) {
+                case 'KMB':
+                    var b = ((params.get('bound') == 'inbound') ? 1 : 2);
+                    const url = 'http://search.kmb.hk/KMBWebSite/Function/FunctionRequest.ashx?action=getstops&route=' +
+                        params.get('route') + '&bound=' + b;
+                    //console.log(url);
+                    getStuff(url).then(resp => {
+                        //console.log(resp);
+                        var customMutator = (value, data, type, params, component) => parseFloat(value).toFixed(1);                        
+                        var table = new Tabulator("#routetable", {
+                            data: resp.data.routeStops,
+                            columns: [
+                                { title: "Seq", field: "Seq" },
+                                { title: "CName", field: "CName" },
+                                { title: "BSICode", field: "BSICode" },
+                                { title: "Bound", field: "Bound" },
+                                { title: "Fare", field: "AirFare", mutator:customMutator }
+                            ]
+                        });
+                    }).catch(e => console.error(e));
+                    break;
+                case 'CTB':
+                case 'NWFB':
+                    // code block
+                    break;
+                default:
+                    console.log('company not found');
+            }
+
+        }
+
+
+
+        function ucase() {
+            var x = document.getElementById("route");
+            x.value = x.value.toUpperCase();
+        }
+
+    </script>
+
+</body>
+
+</html>
