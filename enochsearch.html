@@ -53,8 +53,7 @@
     </form>
     <div id="routetable"></div>
 
-    <script>
-       
+    <script>       
         const params = new URLSearchParams(location.search);
         if (params.has('route')) document.getElementById("route").value = params.get('route');
         if (params.has('company')) {
