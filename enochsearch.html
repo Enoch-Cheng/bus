@@ -5,7 +5,7 @@
     <title>Enoch Route Search</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src='enocheta.js'></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Table stuff -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -51,13 +51,18 @@
         <button class="w3-btn w3-block w3-blue-grey" onclick="ucase()">Search</button>
         <p></p>
     </form>
+    <div id="loading" class="w3-container w3-center" style="display:none">
+        <p></p>
+        <i class="fa fa-circle-o-notch fa-spin" style="font-size:50px"></i>
+    </div>
+
     <div id="routetable"></div>
 
     <script>       
         const params = new URLSearchParams(location.search);
         if (params.has('route')) document.getElementById("route").value = params.get('route');
         if (params.has('company')) {
-
+            document.getElementById("loading").style.display = 'block';
             switch (params.get('company')) {
                 case 'KMB':
                     var b = ((params.get('bound') == 'inbound') ? 1 : 2);
@@ -66,6 +71,7 @@
                     //console.log(url);
                     getStuff(proxy+url).then(resp => {
                         //console.log(resp);
+                        document.getElementById("loading").style.display = 'none';
                         var customMutator = (value, data, type, params, component) => parseFloat(value).toFixed(1);                        
                         var table = new Tabulator("#routetable", {
                             data: resp.data.routeStops,
