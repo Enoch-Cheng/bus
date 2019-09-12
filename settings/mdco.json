@@ -1,11 +1,11 @@
 {
-    "title":"From North Point Ferry Pier to MDCO",
+    "title":"Buses to and from MDCO",
     "list":[
         {
             "co":"KMB",
             "route":"110",
             "bound": 1,
-            "stopname":"KAM HONG STREET",
+            "stopname":"琴行街",
             "stopcode":"JA02E13250",
             "stopseq":30
         },
@@ -13,7 +13,7 @@
             "co":"NWFB",
             "route":"18X",
             "bound": "inbound",
-            "stopname":"KAM HONG STREET",
+            "stopname":"琴行街",
             "stopcode":"001256",
             "stopseq":11
         },
@@ -21,7 +21,7 @@
             "co":"CTB",
             "route":"A12",
             "bound": "inbound",
-            "stopname":"KAM HONG STREET",
+            "stopname":"琴行街",
             "stopcode":"001256",
             "stopseq":10
         },
@@ -29,10 +29,18 @@
             "co":"NWFB",
             "route":"82",
             "bound": "inbound",
-            "stopname":"NORTH POINT FERRY PIER",
+            "stopname":"北角碼頭",
             "stopcode":"001249",
             "stopseq":1
-        }
+        },
+        {
+            "co":"KMB",
+            "route":"110",
+            "bound": 1,
+            "stopname":"太古城中心",
+            "stopcode":"TA40A10250",
+            "stopseq":10
+        },
 
     ]
     
