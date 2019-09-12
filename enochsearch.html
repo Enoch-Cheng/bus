@@ -65,7 +65,7 @@
                     const url = 'http://search.kmb.hk/KMBWebSite/Function/FunctionRequest.ashx?action=getstops&route=' +
                         params.get('route') + '&bound=' + b;
                     //console.log(url);
-                    getStuff(url).then(resp => {
+                    getStuff(proxy+url).then(resp => {
                         //console.log(resp);
                         var customMutator = (value, data, type, params, component) => parseFloat(value).toFixed(1);                        
                         var table = new Tabulator("#routetable", {
