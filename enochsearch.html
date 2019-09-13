@@ -29,19 +29,19 @@
             </div>
 
             <div class="w3-third">
-                <input id="co1" class="w3-check" name="company" type="radio" value="KMB" checked="checked">
+                <input id="co1" class="w3-check" name="company" type="radio" value="KMB">
                 <label>KMB</label>
                 <br>
-                <input id="co2" class="w3-check" name="company" type="radio" value="CTB" disabled>
+                <input id="co2" class="w3-check" name="company" type="radio" value="CTB">
                 <label>CTB</label>
                 <br>
-                <input id="co3" class="w3-check" name="company" type="radio" value="NWFB" disabled>
+                <input id="co3" class="w3-check" name="company" type="radio" value="NWFB">
                 <label>NWFB</label>
                 <br><br>
             </div>
 
             <div class="w3-third">
-                <input id="b1" class="w3-radio" type="radio" name="bound" value="inbound" checked>
+                <input id="b1" class="w3-radio" type="radio" name="bound" value="inbound">
                 <label>Inbound</label>
                 <br>
                 <input id="b2" class="w3-radio" type="radio" name="bound" value="outbound">
@@ -58,21 +58,27 @@
 
     <div id="routetable"></div>
 
-    <script>       
+    <script>
         const params = new URLSearchParams(location.search);
+        // retain previous selection
         if (params.has('route')) document.getElementById("route").value = params.get('route');
+        if (params.has('company')) radioselect('company',params.get('company'));
+        if (params.has('bound')) radioselect('bound',params.get('bound'));
+
+        // search route based on company
         if (params.has('company')) {
             document.getElementById("loading").style.display = 'block';
+
             switch (params.get('company')) {
                 case 'KMB':
                     var b = ((params.get('bound') == 'inbound') ? 1 : 2);
                     const url = 'http://search.kmb.hk/KMBWebSite/Function/FunctionRequest.ashx?action=getstops&route=' +
                         params.get('route') + '&bound=' + b;
                     //console.log(url);
-                    getStuff(proxy+url).then(resp => {
+                    getStuff(proxy + url).then(resp => {
                         //console.log(resp);
                         document.getElementById("loading").style.display = 'none';
-                        var customMutator = (value, data, type, params, component) => parseFloat(value).toFixed(1);                        
+                        var customMutator = (value, data, type, params, component) => parseFloat(value).toFixed(1);
                         var table = new Tabulator("#routetable", {
                             data: resp.data.routeStops,
                             columns: [
@@ -80,14 +86,23 @@
                                 { title: "CName", field: "CName" },
                                 { title: "BSICode", field: "BSICode" },
                                 { title: "Bound", field: "Bound" },
-                                { title: "Fare", field: "AirFare", mutator:customMutator }
+                                { title: "Fare", field: "AirFare", mutator: customMutator }
                             ]
                         });
                     }).catch(e => console.error(e));
                     break;
                 case 'CTB':
                 case 'NWFB':
-                    // code block
+                    const bus_url = 'https://rt.data.gov.hk/v1/transport/citybus-nwfb/route-stop/' +
+                    params.get('company') + '/' + params.get('route') + '/' +  params.get('bound');
+                    getStuff(bus_url).then(resp => {
+                        //console.log(resp);
+                        document.getElementById("loading").style.display = 'none';
+                        var table = new Tabulator("#routetable", {
+                            data: resp.data,
+                            autoColumns: true,
+                        });
+                    }).catch(e => console.error(e));
                     break;
                 default:
                     console.log('company not found');
@@ -95,7 +110,13 @@
 
         }
 
+        function radioselect(name,value){
+            var x = document.getElementsByName(name);
+            for (i = 0; i < x.length; i++){
+                if(x[i].value == value) x[i].checked = true;
+            }
 
+        }
 
         function ucase() {
             var x = document.getElementById("route");
