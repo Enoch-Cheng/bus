@@ -1,11 +1,11 @@
 {
-    "title":"Home to EMSD Headquarters",
+    "title":"To/From EMSD Headquarters",
     "list":[
         {
             "co":"KMB",
             "route":"13X",
             "bound": 2,
-            "stopname":"衛理道",
+            "stopname":"衛理道&rarr;九龍灣",
             "stopcode":"GA01E11500",
             "stopseq":9
         },
@@ -14,7 +14,7 @@
             "co":"KMB",
             "route":"213X",
             "bound": 1,
-            "stopname":"衛理道",
+            "stopname":"衛理道&rarr;九龍灣",
             "stopcode":"GA01E11500",
             "stopseq":24
         },
@@ -23,9 +23,33 @@
             "co":"KMB",
             "route":"224X",
             "bound": 1,
-            "stopname":"勞資審裁處",
+            "stopname":"勞資審裁處&rarr;九龍灣",
             "stopcode":"GA01E11000",
             "stopseq":13
+        },
+        {
+            "co":"KMB",
+            "route":"28",
+            "bound": 1,
+            "stopname":"九龍灣宏展街&rarr;尖沙咀",
+            "stopcode":"KA01W10500",
+            "stopseq":5
+        },
+        {
+            "co":"KMB",
+            "route":"297",
+            "bound": 1,
+            "stopname":"九龍灣宏展街&rarr;紅磡",
+            "stopcode":"KA01W10500",
+            "stopseq":13
+        },
+        {
+            "co":"KMB",
+            "route":"13X",
+            "bound": 1,
+            "stopname":"九龍灣宏展街&rarr;尖東",
+            "stopcode":"KA01W10500",
+            "stopseq":19
         }
 
     ]
