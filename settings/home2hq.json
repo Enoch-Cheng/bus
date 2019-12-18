@@ -50,6 +50,14 @@
             "stopname":"九龍灣宏展街&rarr;尖東",
             "stopcode":"KA01W10500",
             "stopseq":19
+        },
+        {
+            "co":"CTB",
+            "route":"20",
+            "bound": "outbound",
+            "stopname":"天寰沐安街&rarr;維港灣",
+            "stopcode":"003504",
+            "stopseq":1
         }
 
     ]
