@@ -1,0 +1,32 @@
+{
+    "title":"To/From MMRC/Kenndy Town",
+    "list":[
+        {
+            "co":"NWFB",
+            "route":"971",
+            "bound": "inbound",
+            "stopname":"佐敦炮台街&rarr;香港仔",
+            "stopcode":"001482",
+            "stopseq":15
+        },
+        {
+            "co":"NWFB",
+            "route":"971",
+            "bound": "outbound",
+            "stopname":"大口環道&rarr;海麗邨",
+            "stopcode":"002395",
+            "stopseq":17
+        },
+        {
+            "co":"CTB",
+            "route":"43M",
+            "bound": "outbound",
+            "stopname":"大口環道&rarr;堅尼地城",
+            "stopcode":"002395",
+            "stopseq":22
+        }
+
+    ]
+    
+
+}

@@ -100,7 +100,17 @@
                         document.getElementById("loading").style.display = 'none';
                         var table = new Tabulator("#routetable", {
                             data: resp.data,
-                            autoColumns: true,
+                            columns: [
+                                { title: "Company", field: "co" },
+                                { title: "Route", field: "route" },
+                                { title: "Direction", field: "dir" },
+                                { title: "Seq", field: "seq" },
+                                { title: "Stop", field: "stop",formatter:"link", formatterParams:{
+                                    labelField:"stop",
+                                    urlPrefix:"https://rt.data.gov.hk/v1/transport/citybus-nwfb/stop/",
+                                    target:"_blank", }},
+                                { title: "DateRetrieved", field: "data_timestamp" }
+                            ]
                         });
                     }).catch(e => console.error(e));
                     break;
