@@ -1,0 +1,56 @@
+{
+    "title":"To/From HK International Airport",
+    "list":[
+        {
+            "co":"KMB",
+            "route":"203C",
+            "bound": 1,
+            "stopname":"伊利沙伯醫院&rarr;尖東",
+            "stopcode":"WY01S10500",
+            "stopseq":15
+        },
+        {
+            "co":"CTB",
+            "route":"E23",
+            "bound": "outbound",
+            "stopname":"九龍佑寧堂&rarr;機場",
+            "stopcode":"001480",
+            "stopseq":16
+        },
+        {
+            "co":"CTB",
+            "route":"A22",
+            "bound": "inbound",
+            "stopname":"機場&rarr;藍田",
+            "stopcode":"001837",
+            "stopseq":1
+        },
+        {
+            "co":"CTB",
+            "route":"A23",
+            "bound": "inbound",
+            "stopname":"機場&rarr;慈雲山",
+            "stopcode":"001837",
+            "stopseq":1
+        },
+        {
+            "co":"CTB",
+            "route":"A20",
+            "bound": "inbound",
+            "stopname":"機場&rarr;紅磡站",
+            "stopcode":"001837",
+            "stopseq":1
+        },
+        {
+            "co":"CTB",
+            "route":"A21",
+            "bound": "inbound",
+            "stopname":"機場&rarr;紅磡站",
+            "stopcode":"001837",
+            "stopseq":1
+        }
+
+    ]
+    
+
+}
