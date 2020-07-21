@@ -1,0 +1,39 @@
+{
+    "title": "To/From Tsan Yuk Hospital",
+    "list": [{
+            "co": "KMB",
+            "route": "203C",
+            "bound": 1,
+            "stopname": "伊利沙伯醫院&rarr;尖東",
+            "stopcode": "WY01S10500",
+            "stopseq": 15
+        },
+        {
+            "co": "NWFB",
+            "route": "970",
+            "bound": "inbound",
+            "stopname": "彌敦酒店&rarr;香港",
+            "stopcode": "001567",
+            "stopseq": 14
+        },
+        {
+            "co": "NWFB",
+            "route": "970X",
+            "bound": "inbound",
+            "stopname": "彌敦酒店&rarr;香港",
+            "stopcode": "001567",
+            "stopseq": 14
+        },
+        {
+            "co": "CTB",
+            "route": "103",
+            "bound": "outbound",
+            "stopname": "東邊街&rarr;竹園邨",
+            "stopcode": "001008",
+            "stopseq": 7
+        }
+
+    ]
+
+
+}

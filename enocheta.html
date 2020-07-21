@@ -14,7 +14,8 @@
 <body class="w3-container w3-auto">
   <div class="w3-container w3-blue">
     <h1>Current time is <span id="curtime"></span>
-    <a href='index.html' class='fa fa-chevron-circle-left' style='font-size:180%;float:right;text-decoration:none'></a></h1>
+      <a href='index.html' class='fa fa-chevron-circle-left'
+        style='font-size:180%;float:right;text-decoration:none'></a></h1>
     <p><span id="ETAtitle"></span></p>
   </div>
 
@@ -25,13 +26,13 @@
   <div class="w3-bar">
     <a href="enocheta.html" class="w3-bar-item w3-button w3-indigo w3-large" style="width:25%">Home</a>
     <a href="enocheta.html?profile=home2hq" class="w3-bar-item w3-button w3-green w3-large" style="width:25%">HQ</a>
-    <a href="enocheta.html?profile=hkia" class="w3-bar-item w3-button w3-purple w3-large" style="width:25%">HKIA</a>
-    <a href="enocheta.html?profile=home2hunghom" class="w3-bar-item w3-button w3-deep-orange w3-large" style="width:25%">HH</a>
+    <a href="enocheta.html?profile=hkw" class="w3-bar-item w3-button w3-purple w3-large" style="width:25%">HKW</a>
+    <a href="enocheta.html?profile=home2hunghom" class="w3-bar-item w3-button w3-deep-orange w3-large"
+      style="width:25%">HH</a>
   </div>
 
 
   <script>
-
     //const proxy_url = 'https://cors-anywhere.herokuapp.com/';
     //const api_url = 'http://etav3.kmb.hk/?action=geteta&lang=en&route=13X&bound=1&stop=KA01W10500&stop_seq=19';       
 
@@ -64,10 +65,10 @@
         if (settings.list[i].co == 'KMB') {
           kmb_delay++;
           getKmb_eta(settings.list[i], i, kmb_delay).then(resp => {
-            if(resp.hasOwnProperty('eta')){
+            if (resp.hasOwnProperty('eta')) {
               let eta_string = parseKMB(resp.eta);
               updateTable('ETAtable', resp.idx + 1, eta_string);
-            }else{
+            } else {
               updateTable('ETAtable', resp.idx + 1, 'Error!');
             }
 
@@ -79,10 +80,10 @@
         } else {
           cnb_delay++;
           getCnb_eta(settings.list[i], i, cnb_delay).then(resp => {
-            if(resp.hasOwnProperty('eta')){
+            if (resp.hasOwnProperty('eta')) {
               let eta_string = parseCNB(resp.eta);
               updateTable('ETAtable', resp.idx + 1, eta_string);
-            }else{
+            } else {
               updateTable('ETAtable', resp.idx + 1, 'Error!');
             }
 
@@ -100,8 +101,6 @@
       console.log('oops');
       console.error(error);
     });
-
-
   </script>
 
 </body>
