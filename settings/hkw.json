@@ -1,5 +1,5 @@
 {
-    "title": "To/From Tsan Yuk Hospital",
+    "title": "To/From TYH & MMRC",
     "list": [{
             "co": "NWFB",
             "route": "971",
@@ -31,15 +31,7 @@
             "stopname": "彌敦酒店&rarr;香港",
             "stopcode": "001567",
             "stopseq": 14
-        },
-        {
-            "co": "CTB",
-            "route": "103",
-            "bound": "outbound",
-            "stopname": "東邊街&rarr;竹園邨",
-            "stopcode": "001008",
-            "stopseq": 7
-        },
+        },      
         {
             "co": "NWFB",
             "route": "970",
