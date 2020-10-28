@@ -12,9 +12,9 @@
             "co": "NWFB",
             "route": "971",
             "bound": "inbound",
-            "stopname": "柯士甸站&rarr;香港仔",
-            "stopcode": "001586",
-            "stopseq": 16
+            "stopname": "炮台街&rarr;香港仔",
+            "stopcode": "001482",
+            "stopseq": 15
         },
         {
             "co": "NWFB",
