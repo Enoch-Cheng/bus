@@ -19,6 +19,22 @@
         {
             "co": "CTB",
             "route": "19",
+            "bound": "inbound",
+            "stopname": "抵達東區醫院",
+            "stopcode": "001219",
+            "stopseq": 19
+        },
+        {
+            "co": "CTB",
+            "route": "8X",
+            "bound": "inbound",
+            "stopname": "抵達東區醫院",
+            "stopcode": "001219",
+            "stopseq": 14
+        },
+        {
+            "co": "CTB",
+            "route": "19",
             "bound": "outbound",
             "stopname": "山翠苑&rarr;北角",
             "stopcode": "001231",
@@ -30,6 +46,22 @@
             "bound": "outbound",
             "stopname": "山翠苑&rarr;北角",
             "stopcode": "001231",
+            "stopseq": 14
+        },
+        {
+            "co": "CTB",
+            "route": "19",
+            "bound": "outbound",
+            "stopname": "抵達港運城",
+            "stopcode": "001278",
+            "stopseq": 14
+        },
+        {
+            "co": "CTB",
+            "route": "8X",
+            "bound": "outbound",
+            "stopname": "抵達港運城",
+            "stopcode": "001278",
             "stopseq": 14
         }
     ]
