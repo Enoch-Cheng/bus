@@ -1,0 +1,63 @@
+{
+    "title": "To/From North Point & PYNEH",
+    "list": [{
+            "co": "NWFB",
+            "route": "971",
+            "bound": "inbound",
+            "stopname": "文明里&rarr;香港仔",
+            "stopcode": "001564",
+            "stopseq": 12
+        },
+        {
+            "co": "NWFB",
+            "route": "971",
+            "bound": "inbound",
+            "stopname": "炮台街&rarr;香港仔",
+            "stopcode": "001482",
+            "stopseq": 15
+        },
+        {
+            "co": "NWFB",
+            "route": "970",
+            "bound": "inbound",
+            "stopname": "彌敦酒店&rarr;香港",
+            "stopcode": "001567",
+            "stopseq": 14
+        },
+        {
+            "co": "NWFB",
+            "route": "970X",
+            "bound": "inbound",
+            "stopname": "彌敦酒店&rarr;香港",
+            "stopcode": "001567",
+            "stopseq": 14
+        },      
+        {
+            "co": "NWFB",
+            "route": "970",
+            "bound": "outbound",
+            "stopname": "郵政局&rarr;蘇屋邨",
+            "stopcode": "002758",
+            "stopseq": 23
+        },
+         {
+            "co": "CTB",
+            "route": "43M",
+            "bound": "outbound",
+            "stopname": "美景臺&rarr;竹園邨",
+            "stopcode": "002332",
+            "stopseq": 20
+        },
+        {
+            "co": "NWFB",
+            "route": "971",
+            "bound": "outbound",
+            "stopname": "美景臺&rarr;海麗邨",
+            "stopcode": "002332",
+            "stopseq": 15
+        }
+
+    ]
+
+
+}
