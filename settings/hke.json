@@ -1,62 +1,37 @@
 {
-    "title": "To/From North Point & PYNEH",
+    "title": "To/From North Point & PYNEH<br><a href='https://www.nwff.com.hk/route/get_route.php?id=1c87d6ed-4ace-464c-b24e-4db2b83ce902&route_id=5&submenu_num=3&lang=zh-hk' target='_blank'>Ferry Schedule<a>",
     "list": [{
-            "co": "NWFB",
-            "route": "971",
-            "bound": "inbound",
-            "stopname": "文明里&rarr;香港仔",
-            "stopcode": "001564",
-            "stopseq": 12
-        },
-        {
-            "co": "NWFB",
-            "route": "971",
-            "bound": "inbound",
-            "stopname": "炮台街&rarr;香港仔",
-            "stopcode": "001482",
-            "stopseq": 15
-        },
-        {
-            "co": "NWFB",
-            "route": "970",
-            "bound": "inbound",
-            "stopname": "彌敦酒店&rarr;香港",
-            "stopcode": "001567",
-            "stopseq": 14
-        },
-        {
-            "co": "NWFB",
-            "route": "970X",
-            "bound": "inbound",
-            "stopname": "彌敦酒店&rarr;香港",
-            "stopcode": "001567",
-            "stopseq": 14
-        },      
-        {
-            "co": "NWFB",
-            "route": "970",
-            "bound": "outbound",
-            "stopname": "郵政局&rarr;蘇屋邨",
-            "stopcode": "002758",
-            "stopseq": 23
-        },
-         {
             "co": "CTB",
-            "route": "43M",
-            "bound": "outbound",
-            "stopname": "美景臺&rarr;竹園邨",
-            "stopcode": "002332",
-            "stopseq": 20
+            "route": "19",
+            "bound": "inbound",
+            "stopname": "琴行街&rarr;東區醫院",
+            "stopcode": "001373",
+            "stopseq": 19
         },
         {
-            "co": "NWFB",
-            "route": "971",
+            "co": "CTB",
+            "route": "8X",
+            "bound": "inbound",
+            "stopname": "琴行街&rarr;東區醫院",
+            "stopcode": "001373",
+            "stopseq": 14
+        },
+        {
+            "co": "CTB",
+            "route": "19",
             "bound": "outbound",
-            "stopname": "美景臺&rarr;海麗邨",
-            "stopcode": "002332",
-            "stopseq": 15
+            "stopname": "山翠苑&rarr;北角",
+            "stopcode": "001231",
+            "stopseq": 14
+        },
+        {
+            "co": "CTB",
+            "route": "8X",
+            "bound": "outbound",
+            "stopname": "山翠苑&rarr;北角",
+            "stopcode": "001231",
+            "stopseq": 14
         }
-
     ]
 
 
