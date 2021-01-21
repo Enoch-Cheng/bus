@@ -1,70 +1,85 @@
 {
-    "title": "To/From North Point & PYNEH<br><a href='https://www.nwff.com.hk/route/get_route.php?id=1c87d6ed-4ace-464c-b24e-4db2b83ce902&route_id=5&submenu_num=3&lang=zh-hk' target='_blank'>Ferry Schedule<a>",
-    "list": [{
-            "co": "CTB",
-            "route": "19",
-            "bound": "inbound",
-            "stopname": "琴行街&rarr;東區醫院",
-            "stopcode": "001373",
-            "stopseq": 19
-        },
-        {
-            "co": "CTB",
-            "route": "8X",
-            "bound": "inbound",
-            "stopname": "琴行街&rarr;東區醫院",
-            "stopcode": "001373",
-            "stopseq": 14
-        },
-        {
-            "co": "CTB",
-            "route": "19",
-            "bound": "inbound",
-            "stopname": "抵達東區醫院",
-            "stopcode": "001219",
-            "stopseq": 19
-        },
-        {
-            "co": "CTB",
-            "route": "8X",
-            "bound": "inbound",
-            "stopname": "抵達東區醫院",
-            "stopcode": "001219",
-            "stopseq": 14
-        },
-        {
-            "co": "CTB",
-            "route": "19",
-            "bound": "outbound",
-            "stopname": "山翠苑&rarr;北角",
-            "stopcode": "001231",
-            "stopseq": 14
-        },
-        {
-            "co": "CTB",
-            "route": "8X",
-            "bound": "outbound",
-            "stopname": "山翠苑&rarr;北角",
-            "stopcode": "001231",
-            "stopseq": 14
-        },
-        {
-            "co": "CTB",
-            "route": "19",
-            "bound": "outbound",
-            "stopname": "抵達港運城",
-            "stopcode": "001278",
-            "stopseq": 14
-        },
-        {
-            "co": "CTB",
-            "route": "8X",
-            "bound": "outbound",
-            "stopname": "抵達港運城",
-            "stopcode": "001278",
-            "stopseq": 14
-        }
-    ]
-
-
+  "title": "To/From North Point & PYNEH<br><a href='https://www.nwff.com.hk/route/get_route.php?id=1c87d6ed-4ace-464c-b24e-4db2b83ce902&route_id=5&submenu_num=3&lang=zh-hk' target='_blank'>Ferry Schedule<a>",
+  "list": [
+    {
+      "co": "CTB",
+      "route": "19",
+      "bound": "inbound",
+      "stopname": "琴行街&rarr;東區醫院",
+      "stopcode": "001373",
+      "stopseq": 19
+    },
+    {
+      "co": "CTB",
+      "route": "8X",
+      "bound": "inbound",
+      "stopname": "琴行街&rarr;東區醫院",
+      "stopcode": "001373",
+      "stopseq": 14
+    },
+    {
+      "co": "CTB",
+      "route": "19",
+      "bound": "inbound",
+      "stopname": "抵達東區醫院",
+      "stopcode": "001219",
+      "stopseq": 19
+    },
+    {
+      "co": "CTB",
+      "route": "8X",
+      "bound": "inbound",
+      "stopname": "抵達東區醫院",
+      "stopcode": "001219",
+      "stopseq": 14
+    },
+    {
+      "co": "CTB",
+      "route": "19",
+      "bound": "outbound",
+      "stopname": "山翠苑&rarr;北角",
+      "stopcode": "001231",
+      "stopseq": 14
+    },
+    {
+      "co": "CTB",
+      "route": "8X",
+      "bound": "outbound",
+      "stopname": "山翠苑&rarr;北角",
+      "stopcode": "001231",
+      "stopseq": 14
+    },
+    {
+      "co": "NWFB",
+      "route": "106P",
+      "bound": "outbound",
+      "stopname": "山翠苑&rarr;紅磡",
+      "stopcode": "001231",
+      "stopseq": 12
+    },
+    {
+      "co": "CTB",
+      "route": "19",
+      "bound": "outbound",
+      "stopname": "抵達港運城",
+      "stopcode": "001278",
+      "stopseq": 14
+    },
+    {
+      "co": "CTB",
+      "route": "8X",
+      "bound": "outbound",
+      "stopname": "抵達港運城",
+      "stopcode": "001278",
+      "stopseq": 14
+    },
+    {
+      "co": "NWFB",
+      "route": "106",
+      "bound": "outbound",
+      "stopname": "新都城&rarr;紅磡",
+      "stopcode": "001280",
+      "stopseq": 26
+    }
+  ]
 }
