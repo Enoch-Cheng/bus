@@ -50,12 +50,12 @@
       "stopseq": 14
     },
     {
-      "co": "NWFB",
-      "route": "106P",
+      "co": "CTB",
+      "route": "118",
       "bound": "outbound",
-      "stopname": "山翠苑&rarr;紅磡",
+      "stopname": "山翠苑&rarr;長沙灣",
       "stopcode": "001231",
-      "stopseq": 12
+      "stopseq": 15
     },
     {
       "co": "CTB",
@@ -72,14 +72,6 @@
       "stopname": "抵達港運城",
       "stopcode": "001278",
       "stopseq": 14
-    },
-    {
-      "co": "NWFB",
-      "route": "106",
-      "bound": "outbound",
-      "stopname": "新都城&rarr;紅磡",
-      "stopcode": "001280",
-      "stopseq": 26
     }
   ]
 }
