@@ -1,66 +1,63 @@
 {
-    "title":"Home &#9825;",
-    "list":[
-        {
-            "co":"KMB",
-            "route":"203C",
-            "bound": 2,
-            "stopname":"何文田山道&rarr;大坑東",
-            "stopcode":"WY01N10500",
-            "stopseq":9
-        },
+  "title": "Home &#9825;",
+  "list": [
+    {
+      "co": "KMB",
+      "route": "203C",
+      "bound": "inbound",
+      "stopname": "何文田山道&rarr;大坑東",
+      "stopcode": "50A5C817D1469A62",
+      "stopseq": 10
+    },
 
-        {
-            "co":"KMB",
-            "route":"103",
-            "bound": 2,
-            "stopname":"嘉輝臺&rarr;竹園",
-            "stopcode":"PR03N10000",
-            "stopseq":25
-        },
+    {
+      "co": "KMB",
+      "route": "103",
+      "bound": "inbound",
+      "stopname": "嘉輝臺&rarr;竹園",
+      "stopcode": "D5DB45916FCE114A",
+      "stopseq": 27
+    },
 
-        {
-            "co":"KMB",
-            "route":"113",
-            "bound": 2,
-            "stopname":"嘉輝臺&rarr;彩虹",
-            "stopcode":"PR03N10000",
-            "stopseq":18
-        },
-        {
-            "co":"KMB",
-            "route":"170",
-            "bound": 2,
-            "stopname":"嘉輝臺&rarr;沙田",
-            "stopcode":"PR03N10000",
-            "stopseq":17
-        },
-        {
-            "co":"KMB",
-            "route":"182",
-            "bound": 2,
-            "stopname":"嘉輝臺&rarr;愉翠苑",
-            "stopcode":"PR03N10000",
-            "stopseq":11
-        },
-        {
-            "co":"KMB",
-            "route":"203C",
-            "bound": 1,
-            "stopname":"伊利沙伯醫院&rarr;尖東",
-            "stopcode":"WY01S10500",
-            "stopseq":15
-        },
-        {
-            "co":"KMB",
-            "route":"103",
-            "bound": 1,
-            "stopname":"伊利沙伯醫院&rarr;蒲飛路",
-            "stopcode":"WY01S10500",
-            "stopseq":13
-        }
-
-    ]
-    
-
+    {
+      "co": "KMB",
+      "route": "113",
+      "bound": "inbound",
+      "stopname": "嘉輝臺&rarr;彩虹",
+      "stopcode": "D5DB45916FCE114A",
+      "stopseq": 19
+    },
+    {
+      "co": "KMB",
+      "route": "170",
+      "bound": "inbound",
+      "stopname": "嘉輝臺&rarr;沙田",
+      "stopcode": "D5DB45916FCE114A",
+      "stopseq": 17
+    },
+    {
+      "co": "KMB",
+      "route": "182",
+      "bound": "inbound",
+      "stopname": "嘉輝臺&rarr;愉翠苑",
+      "stopcode": "D5DB45916FCE114A",
+      "stopseq": 11
+    },
+    {
+      "co": "KMB",
+      "route": "203C",
+      "bound": "outbound",
+      "stopname": "伊利沙伯醫院&rarr;尖東",
+      "stopcode": "E13E697DA5AE4D59",
+      "stopseq": 17
+    },
+    {
+      "co": "KMB",
+      "route": "103",
+      "bound": "outbound",
+      "stopname": "伊利沙伯醫院&rarr;蒲飛路",
+      "stopcode": "E13E697DA5AE4D59",
+      "stopseq": 13
+    }
+  ]
 }
