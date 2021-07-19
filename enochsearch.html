@@ -66,36 +66,37 @@
         if (params.has('route')) document.getElementById("route").value = params.get('route');
         if (params.has('company')) radioselect('company',params.get('company'));
         if (params.has('bound')) radioselect('bound',params.get('bound'));
-
+        let bus_url = '';
         // search route based on company
         if (params.has('company')) {
             document.getElementById("loading").style.display = 'block';
 
             switch (params.get('company')) {
                 case 'KMB':
-                    var b = ((params.get('bound') == 'inbound') ? 1 : 2);
-                    const url = 'http://search.kmb.hk/KMBWebSite/Function/FunctionRequest.ashx?action=getstops&route=' +
-                        params.get('route') + '&bound=' + b;
-                    //console.log(url);
-                    getStuff(proxy + url).then(resp => {
+                    // ------- New API ----------
+                    bus_url = 'https://data.etabus.gov.hk/v1/transport/kmb/route-stop/' +
+                    params.get('route') + '/' +  params.get('bound') + '/1';
+                    getStuff(bus_url).then(resp => {
                         //console.log(resp);
                         document.getElementById("loading").style.display = 'none';
-                        var customMutator = (value, data, type, params, component) => parseFloat(value).toFixed(1);
                         var table = new Tabulator("#routetable", {
-                            data: resp.data.routeStops,
+                            data: resp.data,
                             columns: [
-                                { title: "Seq", field: "Seq" },
-                                { title: "CName", field: "CName" },
-                                { title: "BSICode", field: "BSICode" },
-                                { title: "Bound", field: "Bound" },
-                                { title: "Fare", field: "AirFare", mutator: customMutator }
+                                { title: "Route", field: "route" },
+                                { title: "Direction", field: "bound" },
+                                { title: "ServiceType", field: "service_type" },
+                                { title: "Seq", field: "seq" },
+                                { title: "Stop", field: "stop",formatter:"link", formatterParams:{
+                                    labelField:"stop",
+                                    urlPrefix:"https://data.etabus.gov.hk/v1/transport/kmb/stop/",
+                                    target:"_blank", }}
                             ]
                         });
                     }).catch(e => console.error(e));
                     break;
                 case 'CTB':
                 case 'NWFB':
-                    const bus_url = 'https://rt.data.gov.hk/v1/transport/citybus-nwfb/route-stop/' +
+                    bus_url = 'https://rt.data.gov.hk/v1/transport/citybus-nwfb/route-stop/' +
                     params.get('company') + '/' + params.get('route') + '/' +  params.get('bound');
                     getStuff(bus_url).then(resp => {
                         //console.log(resp);
