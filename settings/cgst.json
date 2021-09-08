@@ -13,7 +13,7 @@
       "co": "CTB",
       "route": "103",
       "bound": "inbound",
-      "stopname": "聯合道&rarr;香港",
+      "stopname": "聯合道(城巴)&rarr;香港",
       "stopcode": "001622",
       "stopseq": 15
     },
@@ -21,7 +21,7 @@
       "co": "KMB",
       "route": "103",
       "bound": "outbound",
-      "stopname": "聯合道&rarr;香港",
+      "stopname": "聯合道(九巴)&rarr;香港",
       "stopcode": "2431FF3100478DEE",
       "stopseq": 14
     },
@@ -29,7 +29,7 @@
       "co": "CTB",
       "route": "182",
       "bound": "inbound",
-      "stopname": "聯合道&rarr;香港",
+      "stopname": "聯合道(城巴)&rarr;香港",
       "stopcode": "001622",
       "stopseq": 14
     },
@@ -37,7 +37,7 @@
       "co": "KMB",
       "route": "182",
       "bound": "outbound",
-      "stopname": "聯合道&rarr;香港",
+      "stopname": "聯合道(九巴)&rarr;香港",
       "stopcode": "2431FF3100478DEE",
       "stopseq": 14
     }
