@@ -42,20 +42,20 @@
       "stopseq": 14
     },
     {
-      "co": "CTB",
+      "co": "KMB",
       "route": "118",
-      "bound": "outbound",
-      "stopname": "山翠苑&rarr;長沙灣",
-      "stopcode": "001231",
+      "bound": "inbound",
+      "stopname": "山翠苑(九巴)&rarr;長沙灣",
+      "stopcode": "0DCC18C3A018C1DA",
       "stopseq": 15
     },
 
     {
-      "co": "KMB",
+      "co": "CTB",
       "route": "118",
-      "bound": "inbound",
-      "stopname": "山翠苑&rarr;長沙灣",
-      "stopcode": "0DCC18C3A018C1DA",
+      "bound": "outbound",
+      "stopname": "山翠苑(城巴)&rarr;長沙灣",
+      "stopcode": "001231",
       "stopseq": 15
     }
   ]
