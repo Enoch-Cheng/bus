@@ -1,0 +1,45 @@
+{
+  "title": "CGST",
+  "list": [
+    {
+      "co": "KMB",
+      "route": "203C",
+      "bound": "outbound",
+      "stopname": "又一城&rarr;尖東",
+      "stopcode": "23CF721FCA83F54B",
+      "stopseq": 10
+    },
+    {
+      "co": "CTB",
+      "route": "103",
+      "bound": "inbound",
+      "stopname": "聯合道&rarr;香港",
+      "stopcode": "001622",
+      "stopseq": 15
+    },
+    {
+      "co": "KMB",
+      "route": "103",
+      "bound": "outbound",
+      "stopname": "聯合道&rarr;香港",
+      "stopcode": "2431FF3100478DEE",
+      "stopseq": 14
+    },
+    {
+      "co": "CTB",
+      "route": "182",
+      "bound": "inbound",
+      "stopname": "聯合道&rarr;香港",
+      "stopcode": "001622",
+      "stopseq": 14
+    },
+    {
+      "co": "KMB",
+      "route": "182",
+      "bound": "outbound",
+      "stopname": "聯合道&rarr;香港",
+      "stopcode": "2431FF3100478DEE",
+      "stopseq": 14
+    }
+  ]
+}
