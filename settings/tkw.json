@@ -1,0 +1,45 @@
+{
+  "title": "Whampoa to Tokwawan",
+  "list": [
+    {
+      "co": "KMB",
+      "route": "5D",
+      "bound": "outbound",
+      "stopname": "紅磡邨&rarr;土瓜灣",
+      "stopcode": "D3139CF35C894BC8",
+      "stopseq": 22
+    },
+    {
+      "co": "CTB",
+      "route": "E23",
+      "bound": "inbound",
+      "stopname": "紅磡邨&rarr;土瓜灣",
+      "stopcode": "001478",
+      "stopseq": 18
+    },
+    {
+      "co": "KMB",
+      "route": "11X",
+      "bound": "inbound",
+      "stopname": "紅磡邨&rarr;土瓜灣",
+      "stopcode": "D3139CF35C894BC8",
+      "stopseq": 6
+    },
+    {
+      "co": "NWFB",
+      "route": "115",
+      "bound": "outbound",
+      "stopname": "紅磡邨&rarr;土瓜灣",
+      "stopcode": "001478",
+      "stopseq": 1
+    },
+    {
+      "co": "KMB",
+      "route": "115",
+      "bound": "inbound",
+      "stopname": "紅磡邨&rarr;土瓜灣",
+      "stopcode": "D3139CF35C894BC8",
+      "stopseq": 15
+    }
+  ]
+}
