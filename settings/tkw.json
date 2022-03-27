@@ -10,6 +10,14 @@
       "stopseq": 21
     },
     {
+      "co": "KMB",
+      "route": "5D",
+      "bound": "outbound",
+      "stopname": "鴻福街&rarr;黃埔",
+      "stopcode": "AFEFDF25A955C72C",
+      "stopseq": 21
+    },
+    {
       "co": "NWFB",
       "route": "796X",
       "bound": "outbound",
