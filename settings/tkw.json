@@ -3,6 +3,38 @@
   "list": [
     {
       "co": "KMB",
+      "route": "12A",
+      "bound": "inbound",
+      "stopname": "鴻福街&rarr;黃埔",
+      "stopcode": "91929D42214F3D7F",
+      "stopseq": 21
+    },
+    {
+      "co": "NWFB",
+      "route": "796X",
+      "bound": "outbound",
+      "stopname": "鴻福街&rarr;黃埔",
+      "stopcode": "001531",
+      "stopseq": 22
+    },
+    {
+      "co": "KMB",
+      "route": "3B",
+      "bound": "outbound",
+      "stopname": "鴻福街&rarr;黃埔",
+      "stopcode": "AFEFDF25A955C72C",
+      "stopseq": 22
+    },
+    {
+      "co": "KMB",
+      "route": "15",
+      "bound": "outbound",
+      "stopname": "鴻福街&rarr;黃埔",
+      "stopcode": "AFEFDF25A955C72C",
+      "stopseq": 22
+    },
+    {
+      "co": "KMB",
       "route": "5D",
       "bound": "outbound",
       "stopname": "紅磡邨&rarr;土瓜灣",
