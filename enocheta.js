@@ -135,7 +135,9 @@ async function getCnb_eta(d, idx, wait) {
   if (data.hasOwnProperty("data")) {
     console.log("Got ETA");
     // console.log(data.data);
-    return { eta: data.data, idx: idx };
+    // filter direction
+    filtered = data.data.filter((a) => a.dir == filterMap(d.bound));
+    return { eta: filtered, idx: idx };
   } else {
     console.error("Cannot get ETA");
   }
@@ -177,4 +179,15 @@ function formatTime(datestring) {
 
   return hh + ":" + mm;
   console.log("Getting current time");
+}
+
+function filterMap(key) {
+  if (key == "inbound") {
+    return "I";
+  } else if (key == "outbound") {
+    return "O";
+  } else {
+    console.log("error determining direction");
+    return "I";
+  }
 }

@@ -1,27 +1,35 @@
 {
-  "title": "To/From PYNEH<br><a href='https://www.nwff.com.hk/route/get_route.php?id=1c87d6ed-4ace-464c-b24e-4db2b83ce902&route_id=5&submenu_num=3&lang=zh-hk' target='_blank'>Ferry Schedule<a>",
+  "title": "To/From SWH<br><a href='https://www.sunferry.com.hk/zh/route-and-fare/timetable?route=north-point-to-hung-hom' target='_blank'>Ferry Schedule<a>",
   "list": [
     {
-      "co": "KMB",
-      "route": "118",
-      "bound": "outbound",
-      "stopname": "勞資審裁處(九巴)&rarr;小西灣",
-      "stopcode": "B0668BFF6178BA0B",
-      "stopseq": 13
+      "co": "NWFB",
+      "route": "82",
+      "bound": "inbound",
+      "stopname": "北角碼頭&rarr;西灣河",
+      "stopcode": "001249",
+      "stopseq": 1
     },
     {
-      "co": "CTB",
-      "route": "118",
+      "co": "KMB",
+      "route": "110",
+      "bound": "outbound",
+      "stopname": "琴行街(九巴)&rarr;西灣河",
+      "stopcode": "B6C64CB51157F680",
+      "stopseq": 31
+    },
+    {
+      "co": "NWFB",
+      "route": "110",
       "bound": "inbound",
-      "stopname": "勞資審裁處(城巴)&rarr;小西灣",
-      "stopcode": "001471",
-      "stopseq": 14
+      "stopname": "琴行街(新巴)&rarr;西灣河",
+      "stopcode": "001256",
+      "stopseq": 17
     },
     {
       "co": "NWFB",
       "route": "81",
       "bound": "outbound",
-      "stopname": "山翠苑&rarr;太古",
+      "stopname": "山翠苑&rarr;西灣河",
       "stopcode": "001231",
       "stopseq": 19
     },
@@ -29,7 +37,7 @@
       "co": "NWFB",
       "route": "82",
       "bound": "outbound",
-      "stopname": "山翠苑&rarr;太古",
+      "stopname": "山翠苑&rarr;西灣河",
       "stopcode": "001231",
       "stopseq": 14
     },
@@ -37,26 +45,9 @@
       "co": "NWFB",
       "route": "8H",
       "bound": "outbound",
-      "stopname": "山翠苑&rarr;太古",
+      "stopname": "山翠苑&rarr;西灣河",
       "stopcode": "001231",
       "stopseq": 14
-    },
-    {
-      "co": "KMB",
-      "route": "118",
-      "bound": "inbound",
-      "stopname": "山翠苑(九巴)&rarr;長沙灣",
-      "stopcode": "0DCC18C3A018C1DA",
-      "stopseq": 15
-    },
-
-    {
-      "co": "CTB",
-      "route": "118",
-      "bound": "outbound",
-      "stopname": "山翠苑(城巴)&rarr;長沙灣",
-      "stopcode": "001231",
-      "stopseq": 15
     }
   ]
 }
